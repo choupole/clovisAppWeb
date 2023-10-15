@@ -1,36 +1,91 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+  <title>GestPaie</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+  <!-- Vendor CSS Files -->
+ 
+  <link href=" {{ asset( 'admin/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href=" {{ asset( 'admin/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href=" {{ asset( 'admin/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href=" {{ asset( 'admin/assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+  <link href=" {{ asset( 'admin/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+  <link href=" {{ asset( 'admin/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href=" {{ asset( 'admin/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href=" {{ asset( 'admin/assets/css/style.css') }}" rel="stylesheet">
+
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.3.1
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  @include('partials.header')
+<!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  @include('partials.slide')
+<!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    @include('partials.pagetitle')
+
+<!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        @yield('content')
+
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  @include('partials.footer')
+<!-- End Footer -->
+
+
+
+  <!-- Vendor JS Files -->
+	<script src={{asset ('admin/assets/vendor/apexcharts/apexcharts.min.js')}}></script>
+	<script src={{asset ('admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}></script>
+	<script src={{asset ('admin/assets/vendor/chart.js/chart.min.js')}}></script>
+	<script src={{asset ('admin/assets/vendor/echarts/echarts.min.js')}}></script>
+	<script src={{asset ('admin/assets/vendor/quill/quill.min.js')}}></script>
+	<script src={{asset ('admin/assets/vendor/simple-datatables/simple-datatables.js')}}></script>
+	<script src={{asset ('admin/assets/vendor/tinymce/tinymce.min.js')}}></script>
+	<script src={{asset ('admin/assets/vendor/php-email-form/validate.js')}}></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
